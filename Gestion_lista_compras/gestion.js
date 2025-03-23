@@ -26,9 +26,18 @@ class ListaDeCompras {
     eliminarProducto(producto) {
         const index = this.lista.indexOf(producto);
         if (index !== -1) {
-            this.lista.splice(index, 1);
-            this.guardarListaEnLocalStorage();
-            this.mostrarLista();
+            // Aplicar animación al ítem
+            const listaCompras = document.getElementById("listaCompras");
+            const itemAEliminar = listaCompras.children[index];
+            itemAEliminar.classList.add("eliminando");
+
+            // Esperar a que termine la animación antes de eliminar el ítem
+            itemAEliminar.addEventListener("animationend", () => {
+                this.lista.splice(index, 1);
+                this.guardarListaEnLocalStorage();
+                this.mostrarLista();
+                this.mostrarMensajeEliminado(producto);
+            }, { once: true });
         }
     }
 
@@ -50,6 +59,21 @@ class ListaDeCompras {
             li.appendChild(eliminarBtn);
             listaCompras.appendChild(li);
         });
+    }
+
+    mostrarMensajeEliminado(producto) {
+        // Crear el mensaje
+        const mensaje = document.createElement("div");
+        mensaje.textContent = `El ${producto} se eliminó de la lista de compras.`;
+        mensaje.classList.add("mensaje-eliminado");
+
+        // Agregar el mensaje al cuerpo del documento
+        document.body.appendChild(mensaje);
+
+        // Eliminar el mensaje después de 3 segundos
+        setTimeout(() => {
+            mensaje.remove();
+        }, 3000);
     }
 }
 
