@@ -1,8 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #f0f8ff; /* Fondo azul claro */
     margin: 0;
-    padding: 0;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,46 +10,46 @@ body {
 }
 
 .container {
-    background-color: #fff;
+    max-width: 600px;
+    width: 100%;
+    background-color: white;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
 }
 
 h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
+    text-align: center;
     color: #333;
 }
 
 .input-container {
     display: flex;
-    justify-content: space-between;
     margin-bottom: 20px;
 }
 
 #itemInput {
-    width: 70%;
+    flex: 1;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
     font-size: 16px;
+    border: 2px solid #0078d7;
+    border-radius: 5px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 #agregarBtn {
-    padding: 10px 15px;
-    background-color: #28a745;
-    color: #fff;
+    padding: 10px 20px;
+    background-color: #0078d7;
+    color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    margin-left: 10px;
     cursor: pointer;
-    font-size: 16px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 #agregarBtn:hover {
-    background-color: #218838;
+    background-color: #005bb5;
 }
 
 #listaCompras {
@@ -62,7 +62,11 @@ h1 {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 2px dashed #0078d7; /* Líneas azules */
+    font-size: 18px;
+    background-color: #f9f9f9; /* Fondo claro para simular papel */
+    margin-bottom: 5px;
+    border-radius: 5px;
 }
 
 #listaCompras li:last-child {
@@ -71,12 +75,13 @@ h1 {
 
 .eliminarBtn {
     background-color: #dc3545;
-    color: #fff;
+    color: white;
     border: none;
     border-radius: 4px;
     padding: 5px 10px;
     cursor: pointer;
     font-size: 14px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 .eliminarBtn:hover {
