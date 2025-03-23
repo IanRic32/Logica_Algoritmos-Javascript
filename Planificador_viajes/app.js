@@ -1,18 +1,55 @@
 // app.js
 
 // Importar las funciones del módulo viajes.js
-import { registrarDestino, mostrarItinerario } from './viajes.js';
+import { registrarDestino } from './viajes.js';
 
 // Iniciar la aplicación (usando función de flecha)
 const iniciarApp = () => {
-    // Ejemplo de cómo registrar destinos con más personas
-    registrarDestino("Paris", "2024-06-15", "Avión", 2); // 2 personas
-    registrarDestino("Londres", "2024-07-01", "Tren", 4); // 4 personas
-    registrarDestino("New York", "2024-08-10", "Autobús", 1); // 1 persona
-    registrarDestino("Tokio", "2024-09-20", "Avión", 3); // 3 personas
+    const viajeForm = document.getElementById('viajeForm');
+    const itinerarioList = document.getElementById('itinerarioList');
 
-    // Mostrar el itinerario de los viajes
-    mostrarItinerario();
+    // Función para mostrar el itinerario en la interfaz
+    const mostrarItinerarioUI = () => {
+        itinerarioList.innerHTML = ''; // Limpiar la lista antes de mostrar
+
+        // Obtener los viajes registrados (simulando un "getter" desde el módulo viajes.js)
+        const destinos = JSON.parse(localStorage.getItem('destinos')) || [];
+
+        destinos.forEach(viaje => {
+            const viajeItem = document.createElement('div');
+            viajeItem.className = 'viaje-item';
+            viajeItem.innerHTML = `
+                <p><strong>Destino:</strong> ${viaje.destino}</p>
+                <p><strong>Fecha:</strong> ${viaje.fecha}</p>
+                <p><strong>Transporte:</strong> ${viaje.transporte}</p>
+                <p><strong>Personas:</strong> ${viaje.personas}</p>
+                <p><strong>Costo:</strong> $${viaje.costo.toFixed(2)}</p>
+            `;
+            itinerarioList.appendChild(viajeItem);
+        });
+    };
+
+    // Manejar el envío del formulario
+    viajeForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const destino = document.getElementById('destino').value;
+        const fecha = document.getElementById('fecha').value;
+        const transporte = document.getElementById('transporte').value;
+        const personas = parseInt(document.getElementById('personas').value, 10);
+
+        // Registrar el destino
+        registrarDestino(destino, fecha, transporte, personas);
+
+        // Mostrar el itinerario actualizado
+        mostrarItinerarioUI();
+
+        // Limpiar el formulario después de registrar
+        viajeForm.reset();
+    });
+
+    // Cargar los viajes almacenados al iniciar la aplicación
+    mostrarItinerarioUI();
 };
 
 // Ejecutar la aplicación
