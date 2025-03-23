@@ -2,9 +2,47 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planificador de Viajes</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <h1>Planificador de Viajes</h1>
+        <div class="form-container">
+            <h2>Registrar Nuevo Viaje</h2>
+            <form id="viajeForm">
+                <label for="destino">Destino:</label>
+                <select id="destino" name="destino" required>
+                    <option value="Paris">París</option>
+                    <option value="Londres">Londres</option>
+                    <option value="New York">Nueva York</option>
+                    <option value="Tokio">Tokio</option>
+                </select>
+
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" required>
+
+                <label for="transporte">Transporte:</label>
+                <select id="transporte" name="transporte" required>
+                    <option value="Avión">Avión</option>
+                    <option value="Tren">Tren</option>
+                    <option value="Autobús">Autobús</option>
+                </select>
+
+                <label for="personas">Número de Personas:</label>
+                <input type="number" id="personas" name="personas" min="1" value="1" required>
+
+                <button type="submit">Registrar Viaje</button>
+            </form>
+        </div>
+
+        <div class="itinerario-container">
+            <h2>Itinerario de Viajes</h2>
+            <div id="itinerarioList"></div>
+        </div>
+    </div>
+
     <script type="module" src="app.js"></script>
 </body>
 </html>
