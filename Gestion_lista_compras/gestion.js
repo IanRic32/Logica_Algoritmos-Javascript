@@ -1,11 +1,22 @@
 class ListaDeCompras {
     constructor() {
-        this.lista = [];
+        this.lista = this.cargarListaDesdeLocalStorage();
+        this.mostrarLista();
+    }
+
+    cargarListaDesdeLocalStorage() {
+        const listaGuardada = localStorage.getItem('listaCompras');
+        return listaGuardada ? JSON.parse(listaGuardada) : [];
+    }
+
+    guardarListaEnLocalStorage() {
+        localStorage.setItem('listaCompras', JSON.stringify(this.lista));
     }
 
     agregarProducto(producto) {
         if (!this.lista.includes(producto)) {
             this.lista.push(producto);
+            this.guardarListaEnLocalStorage();
             this.mostrarLista();
         } else {
             alert(`${producto} ya está en la lista de compras.`);
@@ -16,6 +27,7 @@ class ListaDeCompras {
         const index = this.lista.indexOf(producto);
         if (index !== -1) {
             this.lista.splice(index, 1);
+            this.guardarListaEnLocalStorage();
             this.mostrarLista();
         }
     }
