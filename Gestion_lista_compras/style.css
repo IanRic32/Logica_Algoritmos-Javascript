@@ -46,10 +46,17 @@ h1 {
     margin-left: 10px;
     cursor: pointer;
     font-family: 'Comic Sans MS', cursive, sans-serif;
+    transition: background-color 0.3s ease;
 }
 
 #agregarBtn:hover {
     background-color: #005bb5;
+}
+
+#agregarBtn:hover::after {
+    content: " \f0c7"; /* Ícono de guardar de Font Awesome */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
 }
 
 #listaCompras {
@@ -82,8 +89,15 @@ h1 {
     cursor: pointer;
     font-size: 14px;
     font-family: 'Comic Sans MS', cursive, sans-serif;
+    transition: background-color 0.3s ease;
 }
 
 .eliminarBtn:hover {
     background-color: #c82333;
+}
+
+.eliminarBtn:hover::after {
+    content: " \f1f8"; /* Ícono de bote de basura de Font Awesome */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
 }
