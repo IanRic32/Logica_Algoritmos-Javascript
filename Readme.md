@@ -6,7 +6,7 @@
 
 
 ## Ejecución
-
+![Ejecucion ](/Imagenes/ejecucion1.png)
 
 
 # Clase 2 (Gestión de lista de compras)
