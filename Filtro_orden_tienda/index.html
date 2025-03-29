@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtros de Tienda Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Filtros de Productos - Tienda Online</h1>
+    
+    <div class="filtros">
+        <h2>Filtrar Productos</h2>
+        
+        <div class="grupo-filtros">
+            <div class="filtro">
+                <label for="precio-max">Precio máximo:</label>
+                <input type="number" id="precio-max" placeholder="Ej: 100">
+            </div>
+            
+            <div class="filtro">
+                <label for="categoria">Categoría:</label>
+                <select id="categoria">
+                    <option value="">Todas las categorías</option>
+                    <option value="Electrónicos">Electrónicos</option>
+                    <option value="Libros">Libros</option>
+                    <option value="Ropa">Ropa</option>
+                    <option value="Hogar">Hogar</option>
+                </select>
+            </div>
+            
+            <div class="filtro">
+                <label for="orden">Ordenar por:</label>
+                <select id="orden">
+                    <option value="nombre-asc">Nombre (A-Z)</option>
+                    <option value="nombre-desc">Nombre (Z-A)</option>
+                    <option value="precio-asc">Precio (Menor a Mayor)</option>
+                    <option value="precio-desc">Precio (Mayor a Menor)</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="grupo-filtros">
+            <div class="filtro">
+                <label for="busqueda">Buscar por nombre:</label>
+                <input type="text" id="busqueda" placeholder="Escribe un nombre...">
+            </div>
+        </div>
+        
+        <button id="aplicar-filtros">Aplicar Filtros</button>
+        <button id="reset-filtros">Restablecer</button>
+    </div>
+    
+    <div class="resultados">
+        <h2>Resultados (<span class="contador">0</span> productos)</h2>
+        <div id="lista-productos"></div>
+        <div class="estadisticas" id="estadisticas"></div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
