@@ -98,7 +98,6 @@ button:hover {
     border-bottom: 1px solid #eee;
 }
 
-
 .file-input-section {
     margin-top: 20px;
     padding: 15px;
@@ -149,4 +148,65 @@ th {
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+
+
+.table-assignment {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f0f7ff;
+    border-radius: 5px;
+}
+
+.table-card {
+    background: white;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-left: 5px solid #3498db;
+}
+
+.table-title {
+    color: #2c3e50;
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.table-guests {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.guest-item {
+    padding: 8px;
+    background: #f8f9fa;
+    border-radius: 3px;
+    border-left: 3px solid #2ecc71;
+}
+
+.letter-tag {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.capacity-info {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.summary-section {
+    margin-top: 30px;
+    padding: 15px;
+    background: #e8f4f8;
+    border-radius: 5px;
 }
