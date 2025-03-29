@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo de los Dos Punteros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Organizador de Mesa para la Cena</h1>
+        <p>Encuentra parejas de invitados que pueden sentarse juntos (nombres que comienzan con la misma letra)</p>
+        
+        <div class="input-section">
+            <label for="guest-list">Lista de Invitados (separados por comas):</label>
+            <input type="text" id="guest-list" value="Ana, Carlos, Cecilia, Daniel, Diana, Eduardo">
+            <button id="find-pairs">Encontrar Parejas</button>
+        </div>
+        
+        <div class="result-section">
+            <h2>Resultado:</h2>
+            <div id="result"></div>
+            <div id="process"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
