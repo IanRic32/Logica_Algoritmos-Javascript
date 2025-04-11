@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divide y Vencerás - Encontrar el Máximo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Algoritmo Divide y Vencerás</h1>
+        <h2>Encontrar el número máximo en un arreglo</h2>
+        
+        <div class="input-section">
+            <label for="array-input">Ingresa números separados por comas:</label>
+            <input type="text" id="array-input" value="3, 8, 2, 10, 5, 7">
+            <button id="find-max">Encontrar Máximo</button>
+        </div>
+        
+        <div class="result-section">
+            <h3>Resultado:</h3>
+            <div id="result"></div>
+            <div id="steps"></div>
+        </div>
+        
+        <div class="explanation">
+            <h3>¿Cómo funciona?</h3>
+            <p>Este algoritmo utiliza el enfoque "Divide y Vencerás" para encontrar el número máximo:</p>
+            <ol>
+                <li>Divide el arreglo en dos mitades</li>
+                <li>Encuentra recursivamente el máximo en cada mitad</li>
+                <li>Combina los resultados comparando ambos máximos</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
