@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Regalos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎁 Buscador de Regalos</h1>
+        
+        <div class="banner">
+            <h2>Ingresa tu lista de regalos</h2>
+            <p>Separa cada regalo con un espacio</p>
+        </div>
+        
+        <div class="input-group">
+            <label for="giftsInput">Lista de regalos:</label>
+            <input type="text" id="giftsInput" placeholder="Ej: Muñeca Carro Lego Pelota" value="Muñeca Carro de juguete Rompecabezas Lego Pelota">
+        </div>
+        
+        <div class="input-group">
+            <label for="searchInput">Buscar regalo:</label>
+            <input type="text" id="searchInput" placeholder="Ej: Lego">
+        </div>
+        
+        <button id="searchButton">Buscar Regalo</button>
+        
+        <div id="result" class="result"></div>
+        
+        <div class="gift-list">
+            <h3>Lista actual de regalos:</h3>
+            <div id="giftTags" class="gift-tags"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
