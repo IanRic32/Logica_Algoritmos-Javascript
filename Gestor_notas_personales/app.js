@@ -3,9 +3,12 @@
  */
 
 
+const { log } = require('console');
 const fs = require('fs');
+const path = require('path');
 // Ruta del archivo de notas
-const filePath = './notas.json';
+const filePath = path.join(__dirname,'notas.json');
+console.log(filePath);
 
 function agregarNota(titulo, contenido) {
   let notas = [];
@@ -44,10 +47,7 @@ function listarNotas() {
   }
 }
 
-/**
- * Elimina una nota por su título.
- * @param {string} titulo - El título de la nota a eliminar.
- */
+
 function eliminarNota(titulo) {
   if (fs.existsSync(filePath)) {
     // Leer todas las notas
