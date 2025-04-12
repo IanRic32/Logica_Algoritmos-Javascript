@@ -113,10 +113,10 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   }
   
-  function showResult(message, type) {
-      resultDiv.textContent = message;
-      resultDiv.className = 'result';
-      resultDiv.classList.add(type);
-      resultDiv.style.display = 'block';
-  }
+function showResult(message, type) {
+    resultDiv.textContent = message;
+    resultDiv.className = 'result';
+    resultDiv.classList.add(type);
+    resultDiv.style.display = 'block';
+}
 });
